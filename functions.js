@@ -2,29 +2,23 @@ import {neutralEvents, negativeEvents, positiveEvents, staffNegativeEvents, staf
 import {Staff, Establishment} from "./constructors.js";
 
 
-
 // Variables creation
 let allStaff = [];
 let totalBeauty = 0;
 let totalEfficiency = 0;
 let totalSecurity = 0;
-
 let bartenderBeauty;
 let bartenderBeauties = [];
 let bartenderEffect;
 let bartenderEfficiencies =  [];
-
 let cookEffect;
 let cookEfficiencies = [];
-
 let guardEffect;
 let guardEfficiencies = [];
-
 let serverBeauty;
 let serverBeauties = [];
 let serverEffect;
 let serverEfficiencies =  [];
-
 let localPopulation;
 let localSecurity;
 export const eventElements = [];
@@ -101,7 +95,6 @@ console.log(establishment1)
 let gpd;
 let gpdLow = 0;
 let gpdHigh = 10;
-
 // Day generator variables creation end
 
 
@@ -120,15 +113,15 @@ for(let dayCount = 1; dayCount <= days; dayCount++){
 }       if (totalBeauty > 0 || totalBeauty < 0) {
             positiveEventChance += totalSecurity/200
             gpdLow += totalSecurity/10
-}       if (neutralEventChance >= 0.50000000000000) {
+}       if (neutralEventChance - 0.1 >= 0.50000000000000) {
             neutralEventChance = 1;
 }       else {
             neutralEventChance = 0;
-}       if (negativeEventChance >= 0.50000000000000) {
+}       if (negativeEventChance - 0.1 >= 0.50000000000000) {
             negativeEventChance = 1;
 }       else {
             negativeEventChance = 0;
-}       if (positiveEventChance >= 0.50000000000000) {
+}       if (positiveEventChance - 0.1 >= 0.50000000000000) {
         positiveEventChance = 1;
 }       else {
             positiveEventChance = 0;
@@ -185,15 +178,3 @@ function getRandomInt(min,max) {
     return Math.floor(Math.random()*(max - min + 1)) + min;
 }
 // Random functions end
-
-
-/*function setAttributes(element, attributes) {
-    Object.keys(attributes).forEach(attr => {
-      element.setAttribute(attr, attributes[attr]);
-    })
-}
-  
-  const attributes = {
-    style: 'background-color: rgb(40,40,40); color:rgb(210,210,210);',
-  };
-*/
