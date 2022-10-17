@@ -1,4 +1,4 @@
-import {neutralEvents, negativeEvents, positiveEvents, staffNegativeEvents, staffNeutralEvents, staffPositiveEvents} from "./events.js";
+import {neutralEvents, negativeEvents, positiveEvents} from "./events.js";
 import {Staff, Establishment} from "./constructors.js";
 
 
@@ -88,14 +88,7 @@ totalSecurity /= guardEfficiencies.length
 
 // Establishment creation
 const establishment1 = new Establishment("Tavern",totalSecurity,totalBeauty,0,0);
-console.log(establishment1)
 // Establishment creation end
-
-// Day generator variables creation
-let gpd;
-let gpdLow = 0;
-let gpdHigh = 10;
-// Day generator variables creation end
 
 
 // Day generator function
@@ -103,42 +96,50 @@ export function dayGenerator(days){
 for(let dayCount = 1; dayCount <= days; dayCount++){
     let eventHasHappened = 0;
     let eventp;
+    let gpd = 0;
+    let gpdLow = 0;
+    let gpdHigh = 10;
     let negativeEventChance = Math.random();
     let positiveEventChance = Math.random();
     let neutralEventChance = Math.random();
 
         if (totalSecurity > 0 || totalSecurity < 0) {
-            negativeEventChance += totalSecurity/200
+            negativeEventChance += (totalSecurity/200 + totalBeauty/200 / 2)
+            console.log(negativeEventChance)
             gpdLow += totalSecurity/10
 }       if (totalBeauty > 0 || totalBeauty < 0) {
-            positiveEventChance += totalSecurity/200
-            gpdLow += totalSecurity/10
-}       if (neutralEventChance - 0.1 >= 0.50000000000000) {
+            positiveEventChance += (totalSecurity/200 + totalBeauty/200 / 2)
+            console.log(positiveEventChance)
+            gpdHigh += totalBeauty/10
+}       if (neutralEventChance - 0.4 >= 0.5) {
             neutralEventChance = 1;
 }       else {
             neutralEventChance = 0;
-}       if (negativeEventChance - 0.1 >= 0.50000000000000) {
+}       if (negativeEventChance - 0.4 >= 0.5) {
             negativeEventChance = 1;
 }       else {
             negativeEventChance = 0;
-}       if (positiveEventChance - 0.1 >= 0.50000000000000) {
+}       if (positiveEventChance - 0.4 >= 0.5) {
         positiveEventChance = 1;
 }       else {
             positiveEventChance = 0;
+
 }       if (eventHasHappened == 0 && neutralEventChance == 1){
-            eventp = neutralEvents[getRandomInt(0,neutralEvents.length-1)];
+            eventp = neutralEvents[getRandomInt(0,neutralEvents.length - 1)];
             eventHasHappened = 1;
 }       else if (eventHasHappened == 0 && positiveEventChance == 1) {
-            eventp = positiveEvents[getRandomInt(0,positiveEvents.length-1)];
+            eventp = positiveEvents[getRandomInt(0,positiveEvents.length - 1)];
             eventHasHappened = 1;
 }       else if (eventHasHappened == 0 && negativeEventChance == 1) {
-            eventp = negativeEvents[getRandomInt(0,negativeEvents.length-1)];
+            eventp = negativeEvents[getRandomInt(0,negativeEvents.length - 1)];
             eventHasHappened = 1;
 }       else {
             eventp = "Nothing of interest happened this day"
 }
+    console.log(eventp)
+    console.log(eventChecker(eventp));
+    gpd += getRandomInt(gpdLow,gpdHigh);
 
-    gpd = getRandomInt(gpdLow,gpdHigh);
     
     let eventBubble = document.createElement("div");
     eventBubble.setAttribute("id", "eventBubbleHTMLid");
@@ -175,6 +176,33 @@ export function clearAllGeneratedElements(index){
 function getRandomInt(min,max) {
     min = Math.ceil(min);
     max = Math.floor(max);
-    return Math.floor(Math.random()*(max - min + 1)) + min;
+    let rInt = Math.floor(Math.random()*(max - min + 1)) + min;
+    return rInt;
 }
+function eventChecker(eventp) {
+    let eventGpd = 0;
+    switch(true){
+        case eventp.includes("gain a little"):
+                eventGpd += getRandomInt(1,3);
+                console.log(eventGpd)
+                    break;
+        case eventp.includes("gain some"):
+                eventGpd += getRandomInt(1,5);
+                    break;
+        case eventp.includes("gain a lot"):
+                eventGpd += getRandomInt(1,10);
+                    break;
+        case eventp.includes("lose a little"):
+                eventGpd -= getRandomInt(1,3);
+                    break;
+        case eventp.includes("lose some"):
+                eventGpd -= getRandomInt(1,5);
+                    break;
+        case eventp.includes("lose a lot"):
+                eventGpd -= getRandomInt(1,10);
+                    break;
+    }
+    return eventGpd;
+}
+
 // Random functions end
