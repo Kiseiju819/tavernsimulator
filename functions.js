@@ -105,11 +105,9 @@ for(let dayCount = 1; dayCount <= days; dayCount++){
 
         if (totalSecurity > 0 || totalSecurity < 0) {
             negativeEventChance += (totalSecurity/200 + totalBeauty/200 / 2)
-            console.log(negativeEventChance)
             gpdLow += totalSecurity/10
 }       if (totalBeauty > 0 || totalBeauty < 0) {
             positiveEventChance += (totalSecurity/200 + totalBeauty/200 / 2)
-            console.log(positiveEventChance)
             gpdHigh += totalBeauty/10
 }       if (neutralEventChance - 0.4 >= 0.5) {
             neutralEventChance = 1;
@@ -137,8 +135,8 @@ for(let dayCount = 1; dayCount <= days; dayCount++){
             eventp = "Nothing of interest happened this day"
 }
     console.log(eventp)
-    console.log(eventChecker(eventp));
-    gpd += getRandomInt(gpdLow,gpdHigh);
+    let eventGoldChange = eventChecker(eventp);
+    gpd += (getRandomInt(gpdLow,gpdHigh) + eventGoldChange);
 
     
     let eventBubble = document.createElement("div");
@@ -172,37 +170,50 @@ export function clearAllGeneratedElements(index){
 }
 // Clear Button function end
 
-// Random functions
+// Utility functions
 function getRandomInt(min,max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     let rInt = Math.floor(Math.random()*(max - min + 1)) + min;
     return rInt;
 }
+// Utility functions end
+
+// Daily gold modifier function
 function eventChecker(eventp) {
     let eventGpd = 0;
+    let gpdIndexOne;
+    let gpdIndexTwo;
     switch(true){
         case eventp.includes("gain a little"):
-                eventGpd += getRandomInt(1,3);
-                console.log(eventGpd)
-                    break;
+            eventGpd += getRandomInt(1,3);
+                break;
         case eventp.includes("gain some"):
-                eventGpd += getRandomInt(1,5);
-                    break;
+            eventGpd += getRandomInt(1,5);
+                break;
         case eventp.includes("gain a lot"):
-                eventGpd += getRandomInt(1,10);
-                    break;
+            eventGpd += getRandomInt(1,10);
+                break;
         case eventp.includes("lose a little"):
-                eventGpd -= getRandomInt(1,3);
-                    break;
+            eventGpd -= getRandomInt(1,3);
+                break;
         case eventp.includes("lose some"):
-                eventGpd -= getRandomInt(1,5);
-                    break;
+            eventGpd -= getRandomInt(1,5);
+                break;
         case eventp.includes("lose a lot"):
-                eventGpd -= getRandomInt(1,10);
-                    break;
+            eventGpd -= getRandomInt(1,10);
+                break;
+        case eventp.includes("You lose"):
+                gpdIndexOne = eventp[eventp.length - 4];
+                    if (eventp.length - 4 != " ") {gpdIndexTwo = eventp[eventp.length - 5]};
+                        eventGpd -= parseInt(gpdIndexTwo + gpdIndexOne);
+                break;
+        case eventp.includes("You gain"):
+                gpdIndexOne = eventp[eventp.length - 4];
+                    if (eventp.length - 4 != " ") {gpdIndexTwo = eventp[eventp.length - 5]};
+                        eventGpd += parseInt(gpdIndexTwo + gpdIndexOne);
+                break;
     }
     return eventGpd;
 }
-
-// Random functions end
+// Daily gold modifier end
