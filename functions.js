@@ -1,9 +1,8 @@
 import {neutralEvents, negativeEvents, positiveEvents} from "./events.js";
 import {Staff, Establishment} from "./constructors.js";
-
+import {allStaff} from "./main.js";
 
 // Variables creation
-let allStaff = [];
 let totalBeauty = 0;
 let totalEfficiency = 0;
 let totalSecurity = 0;
@@ -19,28 +18,12 @@ let serverBeauty;
 let serverBeauties = [];
 let serverEffect;
 let serverEfficiencies =  [];
-let localPopulation;
-let localSecurity;
 export const eventElements = [];
 // Variables creation end
 
 
-// Staff creation
-const staff1 = new Staff("Guard",23,6,0);
-const staff2 = new Staff("Bartender",17,1,0);
-const staff3 = new Staff("Server",43,21,0);
-const staff4 = new Staff("Cook",23,11,0);
-const staff5 = new Staff("Guard",15,9,0);
-const staff6 = new Staff("Bartender",17,1,0);
-const staff7 = new Staff("Server",6,7,0);
-const staff8 = new Staff("Cook",9,3,0);
-allStaff.push(staff1,staff2,staff3,staff4,staff5,staff6,staff7,staff8,)
-// Staff creation end
-
-
 // Staff sorting and stat summing 
-allStaff.forEach(sort)
-function sort(index) {
+export function sort(index) {
  if (index.position === "Guard") {
         guardEffect = index.efficiency;
             guardEfficiencies.push(guardEffect);

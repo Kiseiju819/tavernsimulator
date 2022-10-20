@@ -11,12 +11,41 @@
     <script type="module" src="main.js"></script>
     
     <h1 id="mainHeader">Tavern Simulator</h1>
+    
+    <div id="creationArea">
+        <div id="creationAreaTop"></div>
+        <label id="creationAreaLabel">Create your tavern and it's staff</label><br>
+        
+        <select id="staffCreationList">
+            <option id="bartenderValue" value="Bartender">Bartender</option>
+            <option id="serverValue" value="Server">Server</option>
+            <option id="cookValue" value="Cook">Cook</option>
+            <option id="guardValue" value="Guard">Guard</option>
+        </select>
+
+        <input type="submit" id="staffCreationSubmit" value="Create Staff"><br>
+        <div id="staffCount">
+            <table>
+                <tr>Position</tr>
+                <tr>Count</tr>
+
+            <label id="bartenderCount">0</label><br>
+            <label id="serverCount">0</label><br>
+            <label id="cookCount">0</label><br>
+            <label id="guardCount">0</label>
+
+        </div>
+        
+        <div id="creationAreaBottom"></div>
+
+    </div>
+    
     <div id="inputArea">
+        <div id="inputAreaTop"></div>
         <label id="daysLabel">Input the amount of days to be generated (1-25):</label><br>
             <input type="text" id="daysToGenerateTextBox"><br>
             <div id="buttonArea">
                 <input type="submit" id="daysToGenerateSubmit" value="Generate Days">
-
                 <input type="submit" id="daysToGenerateClear" value="Clear">
             </div>
     </div>
