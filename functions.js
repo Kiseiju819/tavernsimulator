@@ -151,7 +151,7 @@ for(let dayCount = 1; dayCount <= days; dayCount++){
     let dailyGold = document.createElement("p");
     dailyGold.setAttribute("id","dailyGoldHTMLid");
     dailyGold.setAttribute("style", "padding: 0.5em; margin: 0.75em; border: .15em solid rgb(171,164,153); border-radius: 10px; background-color: rgb(60,60,60); color:rgb(180,125,32); font-family: Georgia, serif; font-size: 1.5em; ");
-    let goldD = `Your establishment generated ${gpd} gold`;
+    let goldD = `Your tavern generated ${gpd} gold`;
     dailyGold.innerHTML = goldD;
 
     document.body.append(eventBubble);
