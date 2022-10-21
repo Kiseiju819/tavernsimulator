@@ -68,45 +68,119 @@ background-color: rgb(40,40,40);
     font-weight: bolder;
 }
 
-#staffCount{
+#staffTable{
     background-color: rgb(40,40,40);
     border: 4px solid rgb(171,164,153);
     border-radius: 10px;
-    margin-left: 15em;
-    margin-right: 15em;
+    margin: auto;
+    border-collapse: collapse;
     
 }
 
-#bartenderCount{
+#staffTablePosition{
+    font-family: Georgia, serif;
+    font-size: 2.5em;    
+    font-weight: bolder;
+    color:rgb(210, 210, 210);
+    border-right: 0.12em solid rgb(171,164,153);
+    border-bottom: 0.12em solid rgb(171,164,153);
+    padding: 0.2em;
+}
+
+#positionBartender{
     font-family: Georgia, serif;
     font-size: 2.5em;
     font-weight: bolder;
     color:rgb(210, 210, 210);
     margin: 1em;
+    border-right: 0.12em solid rgb(171,164,153);
+    border-bottom: 0.12em solid rgb(171,164,153);
+    padding: 0.2em;
 }
 
-#serverCount{
+#positionServer{
+    font-family: Georgia, serif;
+    font-size: 2.5em;
+    font-weight: bolder;
+    color:rgb(210, 210, 210);
+    margin: 1em;
+    border-right: 0.12em solid rgb(171,164,153);
+    border-bottom: 0.12em solid rgb(171,164,153);
+    padding: 0.2em;
+}
+
+#positionCook{
+    font-family: Georgia, serif;
+    font-size: 2.5em;
+    font-weight: bolder;
+    color:rgb(210, 210, 210);
+    margin: 1em;
+    border-right: 0.12em solid rgb(171,164,153);
+    border-bottom: 0.12em solid rgb(171,164,153);
+    padding: 0.2em;
+}
+
+#positionGuard{
+    font-family: Georgia, serif;
+    font-size: 2.5em;
+    font-weight: bolder;
+    color:rgb(210, 210, 210);
+    margin: 1em;
+    border-bottom: 0.12em solid rgb(171,164,153);
+    padding: 0.2em;
+}
+
+#staffTableCount{
+    font-family: Georgia, serif;
+    font-size: 2.5em;    
+    font-weight: bolder;
+    color:rgb(210, 210, 210);
+    border-right: 0.12em solid rgb(171,164,153);
+    border-top: 0.12em solid rgb(171,164,153);
+    padding: 0.2em;
+}
+
+#countBartender{
+    font-family: Georgia, serif;
+    font-size: 2.5em;
+    font-weight: bolder;
+    color:rgb(210, 210, 210);
+    margin: 1em;
+    border-right: 0.12em solid rgb(171,164,153);
+    border-top: 0.12em solid rgb(171,164,153);
+    padding: 0.2em;
+}
+
+#countServer{
     font-family: Georgia, serif;
     font-size: 2.5em;    
     font-weight: bolder;
     color:rgb(210, 210, 210);
     margin: 1em;
+    border-right: 0.12em solid rgb(171,164,153);
+    border-top: 0.12em solid rgb(171,164,153);
+    padding: 0.2em;
 }
 
-#cookCount{
+#countCook{
     font-family: Georgia, serif;
     font-size: 2.5em;    
     font-weight: bolder;
     color:rgb(210, 210, 210);
     margin: 1em;
+    border-right: 0.12em solid rgb(171,164,153);
+    border-top: 0.12em solid rgb(171,164,153);
+    padding: 0.2em;
 
 }
 
-#guardCount{
+#countGuard{
     font-family: Georgia, serif;
     font-size: 2.5em;    font-weight: bolder;
     color:rgb(210, 210, 210);
     margin: 1em;
+    border-top: 0.12em solid rgb(171,164,153);
+    padding: 0.2em;
 }
 
 #creationAreaBottom{

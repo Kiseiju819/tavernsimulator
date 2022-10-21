@@ -23,16 +23,24 @@
             <option id="guardValue" value="Guard">Guard</option>
         </select>
 
-        <input type="submit" id="staffCreationSubmit" value="Create Staff"><br>
-        <div id="staffCount">
-            <table>
-                <tr>Position</tr>
-                <tr>Count</tr>
-
-            <label id="bartenderCount">0</label><br>
-            <label id="serverCount">0</label><br>
-            <label id="cookCount">0</label><br>
-            <label id="guardCount">0</label>
+        <input type="submit" id="staffCreationSubmit" value="Add staff"><br>
+        <div>
+            <table id="staffTable">
+                <tr>
+                    <th id="staffTablePosition">Position</th>
+                    <td id="positionBartender">Bartender</td>
+                    <td id="positionServer">Server</td>
+                    <td id="positionCook">Cook</td>
+                    <td id="positionGuard">Guard</td>
+                </tr>
+                <tr>
+                    <th id="staffTableCount">Count</th>
+                    <td id="countBartender">0</td>
+                    <td id="countServer">0</td>
+                    <td id="countCook">0</td>
+                    <td id="countGuard">0</td>
+                </tr>
+            </table>
 
         </div>
         

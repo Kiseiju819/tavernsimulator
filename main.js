@@ -8,6 +8,11 @@ document.querySelector("#staffCreationSubmit").onclick = function createStaff(){
     var selection = document.querySelector("#staffCreationList");
     var staff = new Staff(selection.value, 0, 0, 0);
     allStaff.push(staff);
+    switch(true){
+        case selection.value === "Bartender":
+            var bCount = document.querySelector("#countBartender");
+            console.log(bCount.value);
+    }
 }
 
 
