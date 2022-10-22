@@ -70,8 +70,8 @@ background-color: rgb(40,40,40);
 
 #staffTable{
     background-color: rgb(40,40,40);
-    border: 4px solid rgb(171,164,153);
-    border-radius: 10px;
+    border: 0.25em solid rgb(171,164,153);
+    border-radius: 1em;
     margin: auto;
     border-collapse: collapse;
     
@@ -197,6 +197,8 @@ background-color: rgb(40,40,40);
     margin: 1.5em;
 }
 #daysLabel{
+    border: 5px solid rgb(171,164,153);
+    border-radius: 10px;
     border-radius: 10px;
     color:rgb(210, 210, 210);
     font-family: Georgia, serif;

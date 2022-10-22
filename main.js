@@ -8,10 +8,24 @@ document.querySelector("#staffCreationSubmit").onclick = function createStaff(){
     var selection = document.querySelector("#staffCreationList");
     var staff = new Staff(selection.value, 0, 0, 0);
     allStaff.push(staff);
+    console.log(allStaff)
     switch(true){
         case selection.value === "Bartender":
             var bCount = document.querySelector("#countBartender");
-            console.log(bCount.value);
+            bCount.innerHTML++;
+            break;
+        case selection.value === "Server":
+            var sCount = document.querySelector("#countServer");
+            sCount.innerHTML++
+            break;
+        case selection.value === "Cook":
+            var cCount = document.querySelector("#countCook");
+            cCount.innerHTML++
+            break;
+        case selection.value === "Guard":
+            var gCount = document.querySelector("#countGuard");
+            gCount.innerHTML++
+            break;
     }
 }
 
