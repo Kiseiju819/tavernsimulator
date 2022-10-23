@@ -117,7 +117,6 @@ for(let dayCount = 1; dayCount <= days; dayCount++){
 }       else {
             eventp = "Nothing of interest happened this day"
 }
-    console.log(eventp)
     let eventGoldChange = eventChecker(eventp);
     gpd += (getRandomInt(gpdLow,gpdHigh) + eventGoldChange);
 
