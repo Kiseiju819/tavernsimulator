@@ -23,8 +23,6 @@ export const negativeEvents = [
 
 export const positiveEvents = [
 "A wealthy merchant visits your tavern today, he generously purchases drinks for everyone.  You gain some extra income today.",
-"A wanderer visits your tavern today, they show your cook a few recipes they have picked up during their travels.  Your cook gains +10 efficiency.",
-"A travelling merchant visits your tavern today. In celebration of the revenue they have made recently, they gift your bartender some special lacquer to spruce up the bar.  Your tavern gains +5 beauty.",
 "Your cook is in a good mood starting his shift today. You gain a little income today.",
 "Your barkeep is in a good mood starting his shift today. You gain a little income today.",
 "One of your servers is in a good mood starting his shift today. You gain a little income today."
